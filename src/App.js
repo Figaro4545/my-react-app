@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// создаем первый наш компонент
+// импортируем React из 'react'
+import React from 'react';
 import './App.css';
+import { Header } from './components/index';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// экспортируем по умолчанию класс App, который будет наследоваться от React.Component
+export default class App extends React.Component {
+    
+    // у всех наших классов будет статическое поле path, мы там будем хранить root нашего компонента
+    // у компонента App root будет индексным
+    static path = '/';
+
+    render() {
+        return (
+            <div>
+                <Header />
+            <h1 className='h1'>Hello World!</h1>
+            </div>
+        );
+            
+            
+    }
 }
 
-export default App;
+
